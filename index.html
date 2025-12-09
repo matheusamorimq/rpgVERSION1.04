@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RPG do Reis</title>
+
+  <style>
+    body { margin: 0; overflow: hidden; background: #000; }
+    #gameCanvas { background: #6ab04c; display: block; }
+
+    /* Barra de XP */
+    #ui {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 20px;
+      background: #333;
+      border: 2px solid #fff;
+    }
+
+    #xpBar {
+      height: 100%;
+      width: 0%;
+      background: #4cd137;
+    }
+
+    /* Barra de HP */
+    #hpUI {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 20px;
+      background: #333;
+      border: 2px solid red;
+    }
+
+    #hpBar {
+      height: 100%;
+      width: 100%;
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CANVAS -->
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <!-- XP -->
+  <div id="ui">
+    <div id="xpBar"></div>
+  </div>
+
+  <!-- HP -->
+  <div id="hpUI">
+    <div id="hpBar"></div>
+  </div>
+
+  <!-- MENU DE UPGRADE -->
+  <div id="upgradeMenu" style="
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:black;
+    padding:20px;
+    border:2px solid white;
+    color:white;
+    display:none;
+    z-index: 10;
+  ">
+    <h3>Escolha um upgrade:</h3>
+    <button onclick="applyUpgrade('atk')">Aumentar Ataque</button><br><br>
+    <button onclick="applyUpgrade('hp')">Aumentar Vida</button><br><br>
+    <button onclick="applyUpgrade('def')">Aumentar Defesa</button><br><br>
+    <button onclick="applyUpgrade('spd')">Aumentar Velocidade</button>
+  </div>
+
+  <!-- SCRIPT DO JOGO -->
+  <script src="script.js"></script>
+
+</body>
+</html>
